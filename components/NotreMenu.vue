@@ -22,8 +22,7 @@
             text-4xl
             font-extrabold
             text-primary-600
-            sm:text-5xl
-            sm:tracking-tight
+            sm:text-5xl sm:tracking-tight
             lg:text-6xl
           "
         >
@@ -45,7 +44,6 @@
           space-x-1
           md:space-x-4
           lg:space-x-8
-         
           p-2
         "
       >
@@ -55,9 +53,9 @@
             group
             hover:bg-white
             relative
-           w-full
-           max-w-md
-           h-36
+            w-full
+            max-w-md
+            h-36
             cursor-pointer
             shadow-lg
             rounded-full
@@ -88,29 +86,29 @@
           <div
             @click="toggle('dessert')"
             class="
-            group
-            hover:bg-white
-            relative
-            card
-            cursor-pointer
-            shadow-lg
-            rounded-full
-            flex
-            items-center
-            justify-center
-            overflow-hidden
-          "
+              group
+              hover:bg-white
+              relative
+              card
+              cursor-pointer
+              shadow-lg
+              rounded-full
+              flex
+              items-center
+              justify-center
+              overflow-hidden
+            "
           >
             <h3
               class="
-              text-2xl
-              lg:text-3xl
-              font-bold
-              text-center
-              leading-tight
-              text-accent-200
-              z-10
-            "
+                text-2xl
+                lg:text-3xl
+                font-bold
+                text-center
+                leading-tight
+                text-accent-200
+                z-10
+              "
             >
               Dessert
             </h3>
@@ -123,29 +121,29 @@
           <div
             @click="toggle('entree')"
             class="
-            group
-            hover:bg-white
-            relative
-            card
-            cursor-pointer
-            shadow-lg
-            rounded-full
-            flex
-            items-center
-            justify-center
-            overflow-hidden
-          "
+              group
+              hover:bg-white
+              relative
+              card
+              cursor-pointer
+              shadow-lg
+              rounded-full
+              flex
+              items-center
+              justify-center
+              overflow-hidden
+            "
           >
             <h3
               class="
-              text-2xl
-              lg:text-3xl
-              font-bold
-              text-center
-              leading-tight
-              text-accent-200
-              z-10
-            "
+                text-2xl
+                lg:text-3xl
+                font-bold
+                text-center
+                leading-tight
+                text-accent-200
+                z-10
+              "
             >
               Entree
             </h3>
@@ -158,27 +156,27 @@
           <div
             @click="toggle('bubble')"
             class="
-            group
-            hover:bg-white
-            relative
-            card
-            cursor-pointer
-            shadow-lg
-            rounded-full
-            flex
-            items-center
-            justify-center
-            overflow-hidden
-          "
+              group
+              hover:bg-white
+              relative
+              card
+              cursor-pointer
+              shadow-lg
+              rounded-full
+              flex
+              items-center
+              justify-center
+              overflow-hidden
+            "
           >
             <h3
               class="
-              text-2xl
-              lg:text-4xl
-              font-bold
-              text-center text-accent-200
-              z-10
-            "
+                text-2xl
+                lg:text-4xl
+                font-bold
+                text-center text-accent-200
+                z-10
+              "
             >
               Bubble tea
             </h3>
@@ -191,27 +189,27 @@
           <div
             @click="toggle('boisson')"
             class="
-            group
-            hover:bg-white
-            relative
-            card
-            cursor-pointer
-            shadow-lg
-            rounded-full
-            flex
-            items-center
-            justify-center
-            overflow-hidden
-          "
+              group
+              hover:bg-white
+              relative
+              card
+              cursor-pointer
+              shadow-lg
+              rounded-full
+              flex
+              items-center
+              justify-center
+              overflow-hidden
+            "
           >
             <h3
               class="
-              text-2xl
-              lg:text-4xl
-              font-bold
-              text-center text-accent-200
-              z-10
-            "
+                text-2xl
+                lg:text-4xl
+                font-bold
+                text-center text-accent-200
+                z-10
+              "
             >
               Boisson
             </h3>
@@ -235,8 +233,7 @@
         sm:grid-cols-3
         mx-auto
         sm:gap-x-6
-        lg:grid-cols-3
-        lg:px-32
+        lg:grid-cols-3 lg:px-32
         mt-4
         xl:gap-x-8
       "
@@ -288,11 +285,13 @@
             </p>
 
             <p
-              class="text-md
+              class="
+                text-md
                 font-bold
                 text-center
                 leading-tight
-                text-accent-100"
+                text-accent-100
+              "
             >
               {{ dish.desc }}
             </p>
@@ -328,8 +327,7 @@
         sm:grid-cols-3
         mx-auto
         sm:gap-x-6
-        lg:grid-cols-3
-        lg:px-24
+        lg:grid-cols-3 lg:px-24
         mt-4
         xl:gap-x-8
       "
@@ -411,8 +409,7 @@
         sm:grid-cols-3
         mx-auto
         sm:gap-x-6
-        lg:grid-cols-3
-        lg:px-24
+        lg:grid-cols-3 lg:px-24
         mt-4
         xl:gap-x-8
       "
@@ -494,8 +491,7 @@
         sm:grid-cols-3
         mx-auto
         sm:gap-x-6
-          lg:grid-cols-3
-        lg:px-24
+        lg:grid-cols-3 lg:px-24
         mt-4
         xl:gap-x-8
       "
@@ -577,8 +573,7 @@
         sm:grid-cols-3
         mx-auto
         sm:gap-x-6
-       lg:grid-cols-3
-        lg:px-24
+        lg:grid-cols-3 lg:px-24
         mt-4
         xl:gap-x-8
       "
@@ -673,83 +668,89 @@ export default {
         {
           nom: "Po'Akahi",
           image: "img/plat/Po'akahi.webp",
-          desc:
-            "Riz vinaigré, Boeuf mariné cuit, Ananas, Avocat, Tomate cerise, Mais, concombre,  Graîne de sesame,Oignon frits",
-          allergene: ""
+          desc: "Riz vinaigré, Boeuf mariné cuit, Ananas, Avocat, Tomate cerise, Mais, concombre,  Graîne de sesame,Oignon frits",
+          allergene: "",
         },
         {
           nom: "Po'Alua",
           image: "img/plat/Po'alua.webp",
-          desc:
-            "Riz vinaigré, Saumon mariné cuit,  Mangues fraiche, Radis, Chou Rouge, Avocat, Fèves Edamame, Jeune pousse de soja, Graîne de sesame",
-          allergene: ""
+          desc: "Riz vinaigré, Saumon mariné cuit,  Mangues fraiche, Radis, Chou Rouge, Avocat, Fèves Edamame, Jeune pousse de soja, Graîne de sesame",
+          allergene: "",
         },
         {
           nom: "Po'Akolu",
           image: "img/plat/Po'akolu.webp",
-          desc:
-            "Riz vinaigré, Tofu mariné cuit, Mangues fraiches, Fèves Edamame, Tomate cerise, Salade d'algues Wakamé, Carotte râpées, Graîne de sesame, Oignon frits",
-          allergene: ""
+          desc: "Riz vinaigré, Tofu mariné cuit, Mangues fraiches, Fèves Edamame, Tomate cerise, Salade d'algues Wakamé, Carotte râpées, Graîne de sesame, Oignon frits",
+          allergene: "",
         },
         {
           nom: "Po'Aha",
           image: "img/plat/Po'aha.webp",
-          desc:
-            "Riz vinaigré, Thon cru mariné, Avocat, Radis, Fèves Edamame, Chou Rouge, Carotte râpées, Ananas, Graîne de sesame ",
-          allergene: ""
+          desc: "Riz vinaigré, Thon cru mariné, Avocat, Radis, Fèves Edamame, Chou Rouge, Carotte râpées, Ananas, Graîne de sesame ",
+          allergene: "",
         },
         {
           nom: "Po'Alima",
           image: "img/plat/Po'alima.webp",
-          desc:
-            "Riz vinaigré, Saumon mariné cuit, Ananas, Avocat, Tomate cerise, Mais, concombre, graîne",
-          allergene: ""
+          desc: "Riz vinaigré, Saumon mariné cuit, Ananas, Avocat, Tomate cerise, Mais, concombre, graîne",
+          allergene: "",
         },
 
         {
           nom: "Création Poké ",
           image: "img/plat/Header .webp",
-          desc:
-            "Choissisez vous mêmes les ingrédients qui composeront votre poké parmi nos base, veggies, protéines, toopings et sauces",
-          allergene: ""
-        }
+          desc: "Choissisez vous mêmes les ingrédients qui composeront votre poké parmi nos base, veggies, protéines, toopings et sauces",
+          allergene: "",
+        },
       ],
 
       entrees: [
         {
-          nom: "Salade de mangue",
-          image: "img/plat/salade d'ananas.webp",
+          nom: "Salade de wakame",
+          image: "img/plat/salade de wakame.webp",
           desc: "",
-          allergene: ""
+          allergene: "",
         },
         {
           nom: "Salade d'ananas",
-          image: "img/plat/Salade de mangue.webp",
+          image: "img/plat/Salade dedamame.webp",
           desc: "",
-          allergene: ""
-        }
+          allergene: "",
+        },
       ],
       bubbles: [
         {
           nom: "Création de Bubble Tea",
           image:
             "https://res.cloudinary.com/hawabowls/image/upload/v1625130669/Hawabowls/site_media/bubble_tea_bq2x9t.jpg",
-          desc: ""
-        }
+          desc: "",
+        },
       ],
       desserts: [
         {
           nom: "Moelleux au chocolat",
           image: `img/plat/moelleux au chocolat.webp`,
           desc: "",
-          allergene: ""
+          allergene: "",
         },
         {
           nom: "Shia",
           image: "img/plat/chia bowl.webp",
           desc: "",
-          allergene: ""
-        }
+          allergene: "",
+        },
+        {
+          nom: "Salade de mangue",
+          image: "img/plat/salade d'ananas.webp",
+          desc: "",
+          allergene: "",
+        },
+        {
+          nom: "Salade d'ananas",
+          image: "img/plat/Salade de mangue.webp",
+          desc: "",
+          allergene: "",
+        },
       ],
 
       boissons: [
@@ -757,22 +758,22 @@ export default {
           nom: "Tensai thé Blanc",
           image: "img/plat/Thé blanc myrtille.webp",
           desc: "",
-          allergene: ""
+          allergene: "",
         },
         {
           nom: "Tensai matcha ",
           image: "img/plat/thé matcha menthe poivre.webp",
           desc: "",
-          allergene: ""
+          allergene: "",
         },
         {
           nom: "Tensai thé vert",
           image: "img/plat/Thé vert citron.webp",
           desc: "",
-          allergene: ""
-        }
+          allergene: "",
+        },
       ],
-      selectionedDish: {}
+      selectionedDish: {},
     };
   },
   methods: {
@@ -780,7 +781,7 @@ export default {
       document.querySelector(index).scrollIntoView({
         behavior: "smooth",
         block: "end",
-        inline: "nearest"
+        inline: "nearest",
       });
     },
     toggle(section) {
@@ -852,8 +853,8 @@ export default {
       console.log(payload.value);
       this.isModal = payload.value;
       this.selectionedDish = {};
-    }
-  }
+    },
+  },
 };
 </script>
 
