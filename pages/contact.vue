@@ -27,8 +27,7 @@
               formulaire ci-contre ou par e-mail.
             </p>
             <form
-              action="#"
-              method="POST"
+              @submit.prevent="sendForm"
               class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
             >
               <div>
@@ -39,6 +38,7 @@
                 >
                 <div class="mt-1">
                   <input
+                    v-model="form.firstname"
                     type="text"
                     name="first_name"
                     id="first_name"
@@ -55,6 +55,7 @@
                 >
                 <div class="mt-1">
                   <input
+                    v-model="form.lastname"
                     type="text"
                     name="last_name"
                     id="last_name"
@@ -71,6 +72,7 @@
                 >
                 <div class="mt-1">
                   <input
+                    v-model="form.email"
                     id="email"
                     name="email"
                     type="email"
@@ -87,6 +89,7 @@
                 >
                 <div class="mt-1">
                   <input
+                    v-model="form.entreprise"
                     type="text"
                     name="entreprise"
                     id="entreprise"
@@ -108,6 +111,7 @@
                 </div>
                 <div class="mt-1">
                   <input
+                    v-model="form.mobile"
                     type="text"
                     name="phone"
                     id="phone"
@@ -132,6 +136,7 @@
                 </div>
                 <div class="mt-1">
                   <textarea
+                    v-model="form.content"
                     id="how_can_we_help"
                     name="how_can_we_help"
                     aria-describedby="how_can_we_help_description"
@@ -148,6 +153,7 @@
                 >
                 <div class="mt-1">
                   <input
+                    v-model="form.aboutus"
                     type="text"
                     name="how_did_you_hear_about_us"
                     id="how_did_you_hear_about_us"
@@ -187,6 +193,26 @@ export default {
           "Si vous avez des idées de projet ou de partenariat dont vous aimeriez nous faire part. N'hésitez pas c'est par ici."
       }
     ]
+  },
+  data() {
+    return {
+      form: {
+        firstname: "",
+        lastname: "",
+        content: "",
+        mobile: "",
+        email: "",
+        entreprise: "",
+        aboutus: ""
+      }
+    };
+  },
+  methods: {
+    async sendForm() {
+      const response = await this.$axios.post("/api/contact/mail", this.form);
+      console.log(response);
+      if (response.message) this.$router.push("/");
+    }
   }
 };
 </script>

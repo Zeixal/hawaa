@@ -22,8 +22,7 @@
             text-4xl
             font-extrabold
             text-primary-600
-            sm:text-5xl
-            sm:tracking-tight
+            sm:text-5xl sm:tracking-tight
             lg:text-6xl
           "
         >
@@ -45,7 +44,6 @@
           space-x-1
           md:space-x-4
           lg:space-x-8
-         
           p-2
         "
       >
@@ -55,9 +53,9 @@
             group
             hover:bg-white
             relative
-           w-full
-           max-w-md
-           h-36
+            w-full
+            max-w-md
+            h-36
             cursor-pointer
             shadow-lg
             rounded-full
@@ -88,29 +86,29 @@
           <div
             @click="toggle('dessert')"
             class="
-            group
-            hover:bg-white
-            relative
-            card
-            cursor-pointer
-            shadow-lg
-            rounded-full
-            flex
-            items-center
-            justify-center
-            overflow-hidden
-          "
+              group
+              hover:bg-white
+              relative
+              card
+              cursor-pointer
+              shadow-lg
+              rounded-full
+              flex
+              items-center
+              justify-center
+              overflow-hidden
+            "
           >
             <h3
               class="
-              text-2xl
-              lg:text-3xl
-              font-bold
-              text-center
-              leading-tight
-              text-accent-200
-              z-10
-            "
+                text-2xl
+                lg:text-3xl
+                font-bold
+                text-center
+                leading-tight
+                text-accent-200
+                z-10
+              "
             >
               Dessert
             </h3>
@@ -123,29 +121,29 @@
           <div
             @click="toggle('entree')"
             class="
-            group
-            hover:bg-white
-            relative
-            card
-            cursor-pointer
-            shadow-lg
-            rounded-full
-            flex
-            items-center
-            justify-center
-            overflow-hidden
-          "
+              group
+              hover:bg-white
+              relative
+              card
+              cursor-pointer
+              shadow-lg
+              rounded-full
+              flex
+              items-center
+              justify-center
+              overflow-hidden
+            "
           >
             <h3
               class="
-              text-2xl
-              lg:text-3xl
-              font-bold
-              text-center
-              leading-tight
-              text-accent-200
-              z-10
-            "
+                text-2xl
+                lg:text-3xl
+                font-bold
+                text-center
+                leading-tight
+                text-accent-200
+                z-10
+              "
             >
               Entree
             </h3>
@@ -158,27 +156,27 @@
           <div
             @click="toggle('bubble')"
             class="
-            group
-            hover:bg-white
-            relative
-            card
-            cursor-pointer
-            shadow-lg
-            rounded-full
-            flex
-            items-center
-            justify-center
-            overflow-hidden
-          "
+              group
+              hover:bg-white
+              relative
+              card
+              cursor-pointer
+              shadow-lg
+              rounded-full
+              flex
+              items-center
+              justify-center
+              overflow-hidden
+            "
           >
             <h3
               class="
-              text-2xl
-              lg:text-4xl
-              font-bold
-              text-center text-accent-200
-              z-10
-            "
+                text-2xl
+                lg:text-4xl
+                font-bold
+                text-center text-accent-200
+                z-10
+              "
             >
               Bubble tea
             </h3>
@@ -191,27 +189,27 @@
           <div
             @click="toggle('boisson')"
             class="
-            group
-            hover:bg-white
-            relative
-            card
-            cursor-pointer
-            shadow-lg
-            rounded-full
-            flex
-            items-center
-            justify-center
-            overflow-hidden
-          "
+              group
+              hover:bg-white
+              relative
+              card
+              cursor-pointer
+              shadow-lg
+              rounded-full
+              flex
+              items-center
+              justify-center
+              overflow-hidden
+            "
           >
             <h3
               class="
-              text-2xl
-              lg:text-4xl
-              font-bold
-              text-center text-accent-200
-              z-10
-            "
+                text-2xl
+                lg:text-4xl
+                font-bold
+                text-center text-accent-200
+                z-10
+              "
             >
               Boisson
             </h3>
@@ -235,8 +233,7 @@
         sm:grid-cols-3
         mx-auto
         sm:gap-x-6
-        lg:grid-cols-3
-        lg:px-32
+        lg:grid-cols-3 lg:px-32
         mt-4
         xl:gap-x-8
       "
@@ -288,11 +285,13 @@
             </p>
 
             <p
-              class="text-md
+              class="
+                text-md
                 font-bold
                 text-center
                 leading-tight
-                text-accent-100"
+                text-accent-100
+              "
             >
               {{ dish.desc }}
             </p>
@@ -328,8 +327,7 @@
         sm:grid-cols-3
         mx-auto
         sm:gap-x-6
-        lg:grid-cols-3
-        lg:px-24
+        lg:grid-cols-3 lg:px-24
         mt-4
         xl:gap-x-8
       "
@@ -411,8 +409,7 @@
         sm:grid-cols-3
         mx-auto
         sm:gap-x-6
-        lg:grid-cols-3
-        lg:px-24
+        lg:grid-cols-3 lg:px-24
         mt-4
         xl:gap-x-8
       "
@@ -494,8 +491,7 @@
         sm:grid-cols-3
         mx-auto
         sm:gap-x-6
-          lg:grid-cols-3
-        lg:px-24
+        lg:grid-cols-3 lg:px-24
         mt-4
         xl:gap-x-8
       "
@@ -577,8 +573,7 @@
         sm:grid-cols-3
         mx-auto
         sm:gap-x-6
-       lg:grid-cols-3
-        lg:px-24
+        lg:grid-cols-3 lg:px-24
         mt-4
         xl:gap-x-8
       "
@@ -717,14 +712,14 @@ export default {
 
       entrees: [
         {
-          nom: "Salade de mangue",
-          image: "img/plat/salade d'ananas.webp",
+          nom: "Salade de wakame",
+          image: "img/plat/salade de wakame.webp",
           desc: "",
           allergene: ""
         },
         {
           nom: "Salade d'ananas",
-          image: "img/plat/Salade de mangue.webp",
+          image: "img/plat/Salade d'edamame.webp",
           desc: "",
           allergene: ""
         }
@@ -747,6 +742,18 @@ export default {
         {
           nom: "Shia",
           image: "img/plat/chia bowl.webp",
+          desc: "",
+          allergene: ""
+        },
+        {
+          nom: "Salade de mangue",
+          image: "img/plat/salade d'ananas.webp",
+          desc: "",
+          allergene: ""
+        },
+        {
+          nom: "Salade d'ananas",
+          image: "img/plat/Salade de mangue.webp",
           desc: "",
           allergene: ""
         }
