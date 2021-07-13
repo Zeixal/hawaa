@@ -25,12 +25,4 @@ export default {
 };
 </script>
 
-<style>
-.halfback {
-  width: 100%;
-  background: linear-gradient(to bottom, #3c9e7d 50%, white 50%);
-}
-
-.h-97 {
-}
-</style>
+<style></style>
