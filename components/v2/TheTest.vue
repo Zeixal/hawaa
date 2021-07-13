@@ -14,22 +14,22 @@
       >
         <span class="block text-accent-500 xl:inline">Qui somme-nous?</span>
       </h2>
-      <p class="mt-3 max-w-md mx-auto text-lg text-accent-400 sm:text-xl">
-        C'est en 2010 que les deux fondateurs et mais de longue date, Walid et
-        Daniel ont l'idée de créer un concept de restaurant healthy. Quand on
-        sait que 80% des résultats du sportif se trouvent dans l'assiette et 20%
-        dans l'effort, il était important pour eux, grands sportifs, de proposer
-        un endroit dédié au bien-être proposant des produits frais et vitaminés
-        en alliant plaisir culinaire er bienfaits.
+      <p class="mt-2 max-w-md mx-auto text-lg text-accent-400 sm:text-xl">
+        C’est en décembre 2020 que Daniel et Walid ont décidé d’ouvrir Hawa
+        Bowls. Pas frileux, les deux meilleurs amis ont toujours souhaité créer
+        un restaurant sain et équilibré, dédié au bien-être.Cette idée de départ
+        les a emmené au poké. Le pokébowl est un encas typique des pêcheurs
+        hawaïens. Initialement composé de riz vinaigré, de poisson frais, de
+        fruits exotiques et de légumes, chez Hawa Bowls une touche nantaise est
+        apportée aux recettes signatures du restaurant.
       </p>
       <p
-        class="mt-3 max-w-md mx-auto text-lg text-accent-400 sm:text-xl md:mt-5"
+        class="mt-2 max-w-md mx-auto text-lg text-accent-400 sm:text-xl md:mt-5"
       >
-        C'est finalement 10 ans plus tard, en décembre 2020, que leur rêve prend
-        forme avec l'ouverture d'Hawa Bowls en plein coeur de Nantes. Inspirés
-        par le soleil d'Hawaii avec une touche nantaise, les poké Hawa Bowls
-        ravissent à la fois les sportifs et les gourmands soucieux de prendre
-        soin de leur alimentation grâce à des produits frais et de qualité.
+        Végétarien, végan, avec de la viande ou du poisson, il y en a pour tous
+        les goûts ! Déjà composé, vous pouvez également laisser libre cours à
+        votre imagination pour vous créer un poké bowl à votre image. Ici, tout
+        est bon pour votre petit corps !
       </p>
       <div class="mt-10 sm:flex w-full flex-col justify-center  space-y-2">
         <div
@@ -48,14 +48,12 @@
             class="
             hidden md:block 
               absolute
-              object-cover
               rounded-lg
               mx-auto
-              w-full
-              md:w-96
-            h-full
+              object-fill
               object-center
-              o
+              w-96
+            h-full
             "
           >
             <source
