@@ -68,6 +68,22 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    async lastPost() {
+      console.log("ici");
+      try {
+        this.lastNews = await this.$axios.get(
+          "https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink,media_type&access_token=IGQVJVZAWpvSlpVMnZAEYlA2VWtwb1ZAnaXNsZAmhnM1hORk1Ic0hINGUyNkJnamc5cHNMa2toVy1UWmhQMlQteFVSWmNSam0yTDFkRjlrZAjU0Q1RseEtZAamF1UHVwamtVNE9GRlU3NGR3ZAzRpQUZAxTTFkNDVad040S09lNk1R"
+        );
+        console.log(this.lastNews);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  },
+  async fetch() {
+    this.lastPost();
   }
 };
 </script>
