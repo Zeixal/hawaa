@@ -27,7 +27,7 @@
               formulaire ci-contre ou par e-mail.
             </p>
             <form
-              @submit="sendForm"
+              @submit.prevent="sendForm"
               class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
             >
               <div>
@@ -209,9 +209,9 @@ export default {
   },
   methods: {
     async sendForm() {
-      const response = await this.$axios.post("/api/contact/mail", form);
+      const response = await this.$axios.post("/api/contact/mail", this.form);
       console.log(response);
-      /*   if (response.message) this.$router.push("/"); */
+      if (response.message) this.$router.push("/");
     }
   }
 };
