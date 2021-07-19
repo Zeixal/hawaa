@@ -61,6 +61,56 @@
                     </th>
                   </tr>
                 </thead>
+                <tbody v-if="loading" class="bg-white divide-y divide-gray-200">
+                  <tr v-for="a in 3" :key="a">
+                    <td class="hidden sm:block px-6 py-4 whitespace-nowrap">
+                      <div
+                        class="h-4 w-6 rounded-full bg-gray-200 animate-pulse text-sm text-gray-900 truncate"
+                      ></div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="flex items-center">
+                        <div class="flex-shrink-0 h-10 w-10">
+                          <div
+                            class="h-10 w-10 rounded-full bg-gray-200 animate-pulse"
+                          ></div>
+                        </div>
+                        <div class="ml-4">
+                          <div
+                            class="h-4 w-6 rounded-full bg-gray-200 animate-pulse text-sm font-medium text-gray-900"
+                          ></div>
+                          <div
+                            class="h-4 w-8 rounded-full bg-gray-200 animate-pulse text-sm text-gray-500"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="hidden md:block px-6 py-4 whitespace-nowrap">
+                      <div
+                        class="h-4 w-6 rounded-full bg-gray-200 animate-pulse  inline-flex text-sm text-gray-900 md:w-16 truncate items-center"
+                      ></div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <span
+                        class="h-4 w-6 rounded-full bg-gray-200 animate-pulse px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-secondary-100 text-secondary-800"
+                      >
+                      </span>
+                    </td>
+                    <td
+                      class="px-6 py-4 whitespace-nowrap text-sm truncate text-gray-500"
+                    >
+                      <span
+                        class="h-4 w-16 rounded-full bg-gray-200 animate-pulse px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-secondary-100 text-secondary-800"
+                      >
+                      </span>
+                    </td>
+                    <td
+                      class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+                    ></td>
+                  </tr>
+
+                  <!-- More people... -->
+                </tbody>
                 <tbody class="bg-white divide-y divide-gray-200">
                   <tr v-for="a in articles" :key="a._id">
                     <td class="hidden sm:block px-6 py-4 whitespace-nowrap">
@@ -137,6 +187,7 @@ export default {
   layout: "admin",
   data() {
     return {
+      loading: true,
       articles: []
     };
   },
@@ -147,6 +198,7 @@ export default {
   },
   async fetch() {
     this.articles = await this.getAllArticles();
+    this.loading = false;
   }
 };
 </script>

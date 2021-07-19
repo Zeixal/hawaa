@@ -46,6 +46,34 @@
                     </th>
                   </tr>
                 </thead>
+                <tbody v-if="loading" class="bg-white divide-y divide-gray-200">
+                  <tr v-for="i in 6" :key="i">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <div class="flex items-center">
+                        <div class="ml-4">
+                          <div
+                            class="  h-4 w-6 bg-gray-200 animate-pulse rounded-sm  text-sm font-medium text-gray-900"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="hidden sm:block px-6 py-4 whitespace-nowrap">
+                      <div
+                        class=" h-4 w-5 bg-gray-200 animate-pulse rounded-sm text-sm text-gray-900 sm:w-24 md:w-40 truncate"
+                      ></div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <span class="  h-4 w-5 bg-gray-200 animate-pulse px-2 ">
+                      </span>
+                    </td>
+
+                    <td
+                      class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+                    >
+                      <span class=" h-4 w-2 bg-gray-200 animate-pulse"></span>
+                    </td>
+                  </tr>
+                </tbody>
                 <tbody class="bg-white divide-y divide-gray-200">
                   <tr v-for="i in ingredients" :key="i._id">
                     <td class="px-6 py-4 whitespace-nowrap">
@@ -101,6 +129,7 @@ export default {
   layout: "admin",
   data() {
     return {
+      loading: true,
       ingredients: []
     };
   },
@@ -111,6 +140,7 @@ export default {
   },
   async fetch() {
     this.ingredients = await this.getAllIngredients();
+    this.loading = false;
   }
 };
 </script>
