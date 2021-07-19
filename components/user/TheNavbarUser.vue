@@ -4,15 +4,15 @@
       <div class="flex justify-between h-16">
         <div class="flex px-2 lg:px-0">
           <div class="flex-shrink-0 flex items-center">
-           <nuxt-link to="/"> <img
-              class="block lg:hidden h-8 w-auto"
-              src="img/Logo_transparent.png"
-              alt="Workflow"
-            />
-            <img
-              class="hidden lg:block h-8 w-auto"
-              src="img/Logo_transparent.png"
-              alt="Workflow"
+            <nuxt-link to="/">
+              <img
+                class="block lg:hidden h-8 w-auto"
+                src="img/Logo_transparent.png"
+                alt="Workflow"/>
+              <img
+                class="hidden lg:block h-8 w-auto"
+                src="img/Logo_transparent.png"
+                alt="Workflow"
             /></nuxt-link>
           </div>
           <!-- <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
@@ -130,59 +130,73 @@
         </div>
         <div class=" lg:ml-4 flex items-center">
           <nuxt-link to="/cart">
-          <button
-            class="relative flex-shrink-0 p-1 text-gray-100 rounded-full hover:text-accent-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-          
-          >
-            <span class="sr-only">Voir le panier</span>
-            <!-- Heroicon name: outline/bell -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            <button
+              class="relative flex-shrink-0 p-1 text-gray-100 rounded-full hover:text-accent-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-              />
-            </svg>
-             <span v-if="cart.length !=0" class="absolute top-0 right-0 w-4 h-4 bg-red-600 mt-1 p-0.5 font-semibold leading-3 text-white text-xs rounded-full bg-opacity-90">{{cart.length}}</span>
-          </button>
+              <span class="sr-only">Voir le panier</span>
+              <!-- Heroicon name: outline/bell -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                />
+              </svg>
+              <span
+                v-if="cart.length != 0"
+                class="absolute top-0 right-0 w-4 h-4 bg-red-600 mt-1 p-0.5 font-semibold leading-3 text-white text-xs rounded-full bg-opacity-90"
+                >{{ cart.length }}</span
+              >
+            </button>
           </nuxt-link>
           <div class="ml-4 relative hidden lg:block z-10 flex-shrink-0">
-            <div   class="flex space-x-1 items-center">
-                <nuxt-link v-if="!user"
-                class="mt-0 btn btn-test1" to="/login">
-               Se connecter
+            <div class="flex space-x-1 items-center">
+              <nuxt-link v-if="!user" class="mt-0 btn btn-test1" to="/login">
+                Se connecter
               </nuxt-link>
-          <div v-if="user">
-              <span class="text-white capitalize">{{user.firstname}}</span>
-              <button
-              
-                type="button"
-                @click="profile = !profile"
-                class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-                id="user-menu-button"
-                aria-expanded="false"
-                aria-haspopup="true"
-              >
-                <span class="sr-only">Open user menu</span>
-              <img v-if="user.avatar" class="h-8 w-8 rounded full" :src="user.avatar" alt="">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              </button>
-          </div>
-             
+              <div v-if="user">
+                <span class="text-white capitalize">{{ user.firstname }}</span>
+                <button
+                  type="button"
+                  @click="profile = !profile"
+                  class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                  id="user-menu-button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  <span class="sr-only">Open user menu</span>
+                  <img
+                    v-if="user.avatar"
+                    class="h-8 w-8 rounded full"
+                    :src="user.avatar"
+                    alt=""
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
 
-
-
-              <!--
+            <!--
             Dropdown menu, show/hide based on menu state.
 
             Entering: "transition ease-out duration-100"
@@ -192,52 +206,51 @@
               From: "transform opacity-100 scale-100"
               To: "transform opacity-0 scale-95"
           -->
-              <div
-                v-if="profile"
-                class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-100 transform opacity-0 scale-95 transform opacity-100 scale-100"
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="user-menu-button"
-                tabindex="-1"
-              >
-                <!-- Active: "bg-gray-100", Not Active: "" -->
-                <nuxt-link
+            <div
+              v-if="profile"
+              class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-100 transform opacity-0 scale-95 transform opacity-100 scale-100"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="user-menu-button"
+              tabindex="-1"
+            >
+              <!-- Active: "bg-gray-100", Not Active: "" -->
+              <nuxt-link
                 to="/user"
-                  :class="[
-                    active
-                      ? 'bg-gray-100'
-                      : 'block px-4 py-2 text-sm text-gray-700'
-                  ]"
-                  role="menuitem"
-                  tabindex="-1"
-                  id="user-menu-item-0"
-                  >Mon Profile</nuxt-link
-                >
-                <nuxt-link
+                :class="[
+                  active
+                    ? 'bg-gray-100'
+                    : 'block px-4 py-2 text-sm text-gray-700'
+                ]"
+                role="menuitem"
+                tabindex="-1"
+                id="user-menu-item-0"
+                >Mon Profile</nuxt-link
+              >
+              <nuxt-link
                 to="/paramatres"
-                  :class="[
-                    active
-                      ? 'bg-gray-100'
-                      : 'block px-4 py-2 text-sm text-gray-700'
-                  ]"
-                  role="menuitem"
-                  tabindex="-1"
-                  id="user-menu-item-1"
-                  >Parametres</nuxt-link
-                >
-                <a
-                  href="#"
-                  :class="[
-                    active
-                      ? 'bg-gray-100'
-                      : 'block px-4 py-2 text-sm text-gray-700'
-                  ]"
-                  role="menuitem"
-                  tabindex="-1"
-                  id="user-menu-item-2"
-                  >Déconnection</a
-                >
-              </div>
+                :class="[
+                  active
+                    ? 'bg-gray-100'
+                    : 'block px-4 py-2 text-sm text-gray-700'
+                ]"
+                role="menuitem"
+                tabindex="-1"
+                id="user-menu-item-1"
+                >Parametres</nuxt-link
+              >
+              <a
+                href="#"
+                :class="[
+                  active
+                    ? 'bg-gray-100'
+                    : 'block px-4 py-2 text-sm text-gray-700'
+                ]"
+                role="menuitem"
+                tabindex="-1"
+                id="user-menu-item-2"
+                >Déconnection</a
+              >
             </div>
           </div>
         </div>
@@ -264,14 +277,21 @@
           <div class="flex-shrink-0">
             <img
               class="h-10 w-10 rounded-full"
-              :src="[user.avatar ? 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80':user.avatar]"
+              :src="[
+                user.avatar
+                  ? 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+                  : user.avatar
+              ]"
               alt=""
             />
-            
           </div>
           <div class="ml-3">
-            <div class="text-base font-medium text-gray-800">{{user.firstname}}</div>
-            <div class="text-sm font-medium text-gray-500">{{user.email}}</div>
+            <div class="text-base font-medium text-gray-800">
+              {{ user.firstname }}
+            </div>
+            <div class="text-sm font-medium text-gray-500">
+              {{ user.email }}
+            </div>
           </div>
         </div>
         <div class="mt-3 space-y-1">
@@ -297,24 +317,22 @@
 </template>
 
 <script>
-import { mapActions} from 'vuex'
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
       open: false,
-      active:false,
+      active: false,
       profile: false
     };
   },
-  methods:{
-    
-  },
-  computed:{
-    cart(){
-      return this.$store.getters['cart/getCart']
+  methods: {},
+  computed: {
+    cart() {
+      return this.$store.getters["cart/getCart"];
     },
-    user(){
-      return this.$store.getters['user/getUser']
+    user() {
+      return this.$store.getters["user/getUser"];
     }
   }
 };
