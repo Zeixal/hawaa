@@ -125,10 +125,10 @@
                         </div>
                         <div class="ml-4">
                           <div class="text-sm font-medium text-gray-900">
-                            {{ o.user.firstname || o.userRandom }}
+                            {{ o.user.firstname || o.userRandom.firstname }}
                           </div>
                           <div class="text-sm text-gray-500">
-                            {{ o.user.lastname }}
+                            {{ o.user.lastname || o.userRandom.lastname }}
                           </div>
                         </div>
                       </div>

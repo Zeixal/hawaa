@@ -12,7 +12,7 @@
       lg:pt-12
     "
   >
-    <Payment :total="parseFloat(total)"></Payment>
+    <Payment :total="parseFloat(total)" :items="cart"></Payment>
     <Summary :items="cart"></Summary>
   </div>
 </template>
@@ -64,8 +64,11 @@ export default {
     cart() {
       return this.$store.getters["cart/getCart"];
     },
-    total() {
-      return this.$store.getters["cart/getCartTotal"];
+    total: {
+      get() {
+        return this.$store.getters["cart/getCartTotal"];
+      },
+      set(value) {}
     }
   },
   mounted() {

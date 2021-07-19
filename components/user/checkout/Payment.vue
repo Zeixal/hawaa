@@ -4,11 +4,27 @@
     <form @submit.prevent="handleSubmit">
       <div class="p-10 rounded-md shadow-md bg-white">
         <div class="mb-6">
-          <label class="block mb-3 text-gray-600" for=""
-            >Nom de la commande</label
-          >
+          <label class="block mb-3 text-gray-600" for="">Prénom</label>
+          <input
+            v-model="order.firstname"
+            type="text"
+            class="
+              border border-gray-500
+              rounded-md
+              inline-block
+              py-2
+              px-3
+              w-full
+              text-gray-600
+              tracking-wider
+            "
+          />
+        </div>
+        <div class="mb-6">
+          <label class="block mb-3 text-gray-600" for="">Nom</label>
           <input
             type="text"
+            v-model="order.lastname"
             class="
               border border-gray-500
               rounded-md
@@ -69,7 +85,7 @@
               font-semibold
             "
           >
-            Confirm payment
+            {{ loading ? "...Loading" : "Confirm payment" }}
           </button>
         </div>
       </div>
@@ -77,6 +93,7 @@
   </div>
 </template>
 <script>
+import { mapActions } from "vuex";
 import { loadStripe } from "@stripe/stripe-js";
 const style = {
   style: {
@@ -104,16 +121,26 @@ const style = {
 export default {
   name: "Payment",
   props: {
-    total: Number
+    total: Number,
+    items: Array
   },
   data() {
     return {
+      order: {
+        firstname: "",
+        lastname: "",
+        totalPrice: this.total,
+        orderItems: this.items
+      },
       elements: null,
       stripe: null,
       loading: true
     };
   },
   methods: {
+    ...mapActions({
+      createOrder: "order/createOrder"
+    }),
     finishPayment() {
       this.$emit("change-parent");
     },
@@ -131,7 +158,7 @@ export default {
         const secret = response.data.secret;
         console.log("secret", secret);
         const billingDetails = {
-          name,
+          name: this.name,
           mobile
         };
         const paymentMethodReq = await this.stripe.createPaymentMethod({
@@ -145,7 +172,11 @@ export default {
         });
         this.loading = false;
         console.log("error?", error);
-        router.push("/success");
+        if (!error) {
+          this.createOrder(order);
+          //clear cart too
+          router.push("/success");
+        }
       } catch (error) {
         console.log("error", error);
         this.loading = false;
@@ -160,6 +191,11 @@ export default {
       const element = this.elements.create(ELEMENT_TYPE, style);
       element.mount("#card");
       this.loading = false;
+    }
+  },
+  computed: {
+    name() {
+      return this.firstname + " " + this.lastname;
     }
   },
   mounted() {
