@@ -267,7 +267,7 @@ export default {
       }
     },
     async getAdLogged() {
-      /*   if (store.get("tokenAd")) {
+      if (store.get("tokenAd")) {
         const client = await this.reconnect(store.get("tokenAd"));
 
         if (client) {
@@ -275,11 +275,11 @@ export default {
           this.$router.push("/admin");
         }
       } else {
-      } */
+      }
     }
   },
-  mounted() {
-    /*   this.getAdLogged(); */
+  created() {
+    this.getAdLogged();
   }
 };
 </script>

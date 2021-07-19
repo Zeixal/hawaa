@@ -25,8 +25,8 @@ export default {
   methods: {
     ...mapActions({ reconnect: "admin/reconnection" }),
     async getAdLogged() {
-      if (store.get("tokenAd")) {
-        if (!this.$store.getters["admin/isAuthenticated"]) {
+      if (!this.$store.getters["admin/isAuthenticated"]) {
+        if (store.get("tokenAd")) {
           const client = await this.reconnect(store.get("tokenAd"));
 
           if (client) {
@@ -39,7 +39,7 @@ export default {
       }
     }
   },
-  mounted() {
+  created() {
     this.getAdLogged();
   }
 };
