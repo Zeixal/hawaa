@@ -6,7 +6,7 @@
         <div class="mb-6">
           <label class="block mb-3 text-gray-600" for="">Prénom</label>
           <input
-            v-model="order.firstname"
+            v-model="firstname"
             type="text"
             class="
               border border-gray-500
@@ -24,7 +24,7 @@
           <label class="block mb-3 text-gray-600" for="">Nom</label>
           <input
             type="text"
-            v-model="order.lastname"
+            v-model="lastname"
             class="
               border border-gray-500
               rounded-md
@@ -65,7 +65,7 @@
 
         <div class="mb-6 text-right">
           <span class="text-right font-bold"
-            >{{ loading ? "Loading..." : `Payer ${total}` }} EUR</span
+            >{{ loading ? "Chargement..." : `Payer ${total}` }} EUR</span
           >
         </div>
         <div>
@@ -85,7 +85,7 @@
               font-semibold
             "
           >
-            {{ loading ? "...Loading" : "Confirm payment" }}
+            {{ loading ? "...Chargement" : "Confirmer le payment" }}
           </button>
         </div>
       </div>
@@ -126,11 +126,18 @@ export default {
   },
   data() {
     return {
+      firstname: "",
+      lastname: "",
+      mobile: "",
       order: {
-        firstname: "",
-        lastname: "",
+        user: "",
+        userRandom: {
+          firstname: "",
+          lastname: ""
+        },
         totalPrice: this.total,
-        orderItems: this.items
+        orderItems: this.items,
+        payement: ""
       },
       elements: null,
       stripe: null,
@@ -148,7 +155,7 @@ export default {
       if (this.loading) return;
       this.loading = true;
 
-      const { name, mobile } = Object.fromEntries(new FormData(event.target));
+      /*  const { name, mobile } = Object.fromEntries(new FormData(event.target)); */
 
       const cardElement = this.elements.getElement("card");
       try {
@@ -156,10 +163,11 @@ export default {
           amount: this.total * 100
         });
         const secret = response.data.secret;
+        this.order.payement = response.data.secret;
         console.log("secret", secret);
         const billingDetails = {
           name: this.name,
-          mobile
+          mobile: this.mobile
         };
         const paymentMethodReq = await this.stripe.createPaymentMethod({
           type: "card",
@@ -188,7 +196,7 @@ export default {
 
       this.stripe = await loadStripe(process.env.STRIPE_PK);
       this.elements = this.stripe.elements();
-      const element = this.elements.create(ELEMENT_TYPE, style);
+      const element = this.elements.create(ELEMENT_TYPE, style,{hidePostalCode:true});
       element.mount("#card");
       this.loading = false;
     }
@@ -196,10 +204,14 @@ export default {
   computed: {
     name() {
       return this.firstname + " " + this.lastname;
+    },
+    user() {
+      return this.$store.getters["user/getUser"];
     }
   },
   mounted() {
     this.loadStripe();
+    
   }
 };
 </script>

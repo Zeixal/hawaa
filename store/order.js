@@ -33,10 +33,10 @@ export const actions = {
 
     async getOrder({ commit }, id) {
     },
-    async createOrder({ commit }, order) {
+    async createOrder({ commit }, form) {
         try {
-            const orders = await this.$axios.post('/api/order/')
-            return orders;
+            const order = await this.$axios.post('/api/order/', form)
+            return order;
         } catch (e) {
             return { error: error.message }
         }
